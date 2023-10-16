@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import axios from "axios"
 import { Navigate } from "react-router-dom";
 
@@ -12,6 +12,8 @@ function AddBeerPage() {
     const [brewers_tips, setBrewers_tips] = useState("");
     const [attenuation_level, setAttenuation_level] = useState(0);
     const [contributed_by, setContributed_by] = useState("");
+
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -29,7 +31,7 @@ function AddBeerPage() {
                 setBrewers_tips('');
                 setAttenuation_level(0);
                 setContributed_by('')
-                
+                navigate('/')
             })
             .catch(err => {
                 console.log(err)
