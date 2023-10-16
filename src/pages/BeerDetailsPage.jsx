@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 
-function BeerDetailsPage({allBeers}) {
+function BeerDetailsPage({ allBeers }) {
 
     const [beer, setBeer] = useState(null);
 
@@ -18,11 +18,18 @@ function BeerDetailsPage({allBeers}) {
     return (
         <div>
             {
-                    beer &&
+                beer &&
 
+                <div>
+                    <h3>{beer.name}</h3>
 
-                <h3>{beer.name}</h3>
+                    <img src={beer.image_url} />
+                    <p>{beer.tagline}</p>
+                    <p>attenuation_level: {beer.attenuation_level}</p>
+                    <p>{beer.description}</p>
+                    <p>contributed_by: {beer.contributed_by}</p>
 
+                </div>
 
 
             }
