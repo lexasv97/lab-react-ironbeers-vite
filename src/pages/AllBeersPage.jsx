@@ -12,7 +12,7 @@ function AllBeersPage({allBeers}) {
         <div>
             <h1>All Beers</h1>
             {allBeers.map((beer) => (
-                (<div key={beer._id}>
+                <div key={beer._id}>
                     <img src={beer.image_url} alt="beer" />
                     <Link to={`/beers/${beer._id}`}>
                         <h3>{beer.name}</h3>
@@ -20,7 +20,7 @@ function AllBeersPage({allBeers}) {
                     <p>{beer.tagline}</p>
                     <p>Created by: {beer.contributed_by}</p>
                     <hr /> 
-                </div>)
+                </div>
             ))}
         </div>
     )
